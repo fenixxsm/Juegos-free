@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio y Registro de Sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    form {
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 300px;
+      border-radius: 8px;
+    }
+    input {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inicio de Sesión</h1>
+  
+  <form id="registerForm" class="hidden">
+    <h2>Registro</h2>
+    <input type="text" id="regUser" placeholder="Usuario" required>
+    <input type="password" id="regPassword" placeholder="Contraseña" required>
+    <button type="button" onclick="register()">Registrar</button>
+    <p>¿Ya tienes cuenta? <a href="#" onclick="toggleForms()">Inicia sesión</a></p>
+  </form>
+
+  <form id="loginForm">
+    <h2>Inicio de Sesión</h2>
+    <input type="text" id="loginUser" placeholder="Usuario" required>
+    <input type="password" id="loginPassword" placeholder="Contraseña" required>
+    <button type="button" onclick="login()">Iniciar Sesión</button>
+    <p>¿No tienes cuenta? <a href="#" onclick="toggleForms()">Regístrate</a></p>
+  </form>
+  <a href="index.html">Volver sin sesión</a>
+
+  <div id="welcomeMessage" class="hidden">
+    <h2>Bienvenido, <span id="username"></span>!</h2>
+    <a href="index.html">Seguir en Juegos free</a> <br> <br> <br> <br>  
+    <button onclick="logout()">Cerrar Sesión</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
