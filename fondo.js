@@ -31,7 +31,7 @@ function changeColors() {
 }
 // Guardar el diccionario en localStorage si no está almacenado
 const diccionarioPorDefecto = {
-    "version": "1.0.6",
+    "version": "   Beta 1.0.6.2",
 };
 
 if (!localStorage.getItem('diccionarioIds')) {
@@ -67,7 +67,7 @@ function actualizarDiccionario(nuevoDiccionario) {
 
 // Ejemplo: Actualizar el diccionario
 const nuevoDiccionario = {
-    "version": "   1.0.6.1",
+    "version": "   Beta 1.0.6.2",
 };
 actualizarDiccionario(nuevoDiccionario);
 
