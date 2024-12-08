@@ -67,7 +67,7 @@ function actualizarDiccionario(nuevoDiccionario) {
 
 // Ejemplo: Actualizar el diccionario
 const nuevoDiccionario = {
-    "version": "   1.0.6",
+    "version": "   1.0.6.1",
 };
 actualizarDiccionario(nuevoDiccionario);
 
