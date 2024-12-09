@@ -25,13 +25,17 @@ function changeColors() {
     // Cambiar el color del texto según la opción seleccionada
     document.body.style.color = textValue;
 
+    const aside = document.querySelector('aside');
+    if (aside) {
+        aside.style.backgroundColor = savedBackground;
+    }
     // Guardar los colores seleccionados en localStorage
     localStorage.setItem('backgroundColor', backgroundValue);
     localStorage.setItem('textColor', textValue);
 }
 // Guardar el diccionario en localStorage si no está almacenado
 const diccionarioPorDefecto = {
-    "version": "   Beta 1.0.7",
+    "version": "   Beta 1.0.8",
 };
 
 if (!localStorage.getItem('diccionarioIds')) {
@@ -67,7 +71,7 @@ function actualizarDiccionario(nuevoDiccionario) {
 
 // Ejemplo: Actualizar el diccionario
 const nuevoDiccionario = {
-    "version": "   Beta 1.0.7",
+    "version": "   Beta 1.0.8",
 };
 actualizarDiccionario(nuevoDiccionario);
 
