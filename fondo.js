@@ -25,10 +25,7 @@ function changeColors() {
     // Cambiar el color del texto según la opción seleccionada
     document.body.style.color = textValue;
 
-    const aside = document.querySelector('aside');
-    if (aside) {
-        aside.style.backgroundColor = savedBackground;
-    }
+
     // Guardar los colores seleccionados en localStorage
     localStorage.setItem('backgroundColor', backgroundValue);
     localStorage.setItem('textColor', textValue);
