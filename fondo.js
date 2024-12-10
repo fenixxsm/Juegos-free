@@ -32,7 +32,15 @@ function changeColors() {
 }
 // Guardar el diccionario en localStorage si no está almacenado
 const diccionarioPorDefecto = {
+<<<<<<< Updated upstream
     "version": "   Beta 1.0.9",
+=======
+<<<<<<< HEAD
+    "version": "   Beta 0.0.9",
+=======
+    "version": "   Beta 1.0.9",
+>>>>>>> a68d6f5751d5ce4a4bb2351d85375d0c4cf4a8b1
+>>>>>>> Stashed changes
 };
 
 if (!localStorage.getItem('diccionarioIds')) {
@@ -68,7 +76,15 @@ function actualizarDiccionario(nuevoDiccionario) {
 
 // Ejemplo: Actualizar el diccionario
 const nuevoDiccionario = {
-    "version": "   Beta 1.0.9",
+<<<<<<< Updated upstream
+    "version": "   Beta 0.0.9",
+=======
+<<<<<<< HEAD
+    "version": "   Beta 0.0.9",
+=======
+    "version": "   Beta 0.0.9",
+>>>>>>> a68d6f5751d5ce4a4bb2351d85375d0c4cf4a8b1
+>>>>>>> Stashed changes
 };
 actualizarDiccionario(nuevoDiccionario);
 
