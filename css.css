@@ -9,8 +9,14 @@ body{
  background-color: #312e3000;
 
 }
+
+h6{
+  color: white;
+}
+
+
 h1,h2,h3,h4,h5,h6{
-    color: white;
+ 
  
     font-family: 'Luckiest Guy', sans-serif;
   letter-spacing: 1px;
@@ -95,7 +101,6 @@ nav{
     padding: 10px 20px;
     position: fixed;
     border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.0s ease, color 0.0s ease;
 }
 nav img{
     margin-left: 20px;
@@ -129,14 +134,14 @@ aside::-webkit-scrollbar{
     width: 8px;
 }
 aside::-webkit-scrollbar-thumb{
-    background-color: #0bfe14;
+    background-color: #0bfe13;
     border-radius: 4px;
     border-width: 1px;
     border-right: 1px;
     border-color: black;
 }
 .container-svg{
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px;
     padding: 10px 1px;
     color: var(--text-color);
 }
@@ -175,22 +180,11 @@ a{
     color: transparent;
 }
 svg {
-    fill: #0bfe14;
- 
+  width: 25px;
+  height: 25px;
 }
 
-.bx2 {
-    color: #0bfe14;
-    fill: #0bfe14;
-    width: 25px;
-    height: 25px;
-}
-.nose{
-  color: #0bfe14;
-    fill: #0bfe14;
-    width: 25px;
-    height: 25px;
-}
+
 .yap{
   width: 25px;
   height: 25px;
@@ -215,7 +209,7 @@ svg {
   color: #0bfe14;
 }
 .ola{
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .desplegar2{
   transform: translateX(-200%);
@@ -235,7 +229,7 @@ svg {
   text-align: right;
 }
 .container-svg2{
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px ;
   padding: 10px 1px;
   color: var(--text-color);
   text-align: right;
@@ -273,7 +267,7 @@ svg {
 body {
   height: 100vh;
   
-  transition: background-color 0.0s ease, color 0.0s ease;
+  
 }
 select {
   padding: 10px;
