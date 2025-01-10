@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Luz Verde y Luz Roja</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black; /* Fondo negro */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #game {
+            text-align: center;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            border: 2px solid #000;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe1Fgq9R80zFcSf6Etq8oF5PXo8rSBLdk1fA&s');
+            background-size: cover; /* Ajustar la imagen al fondo */
+            opacity: 0.5; /* Hacer la imagen semi-transparente */
+        }
+        #light {
+            position: fixed; /* Para cubrir toda la pantalla */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0; /* Sin bordes redondeados */
+            background-color: rgba(255, 0, 0, 0.2); /* Luz roja con 20% de transparencia */
+            pointer-events: none; /* Para que no interfiera con los clicks */
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 24px;
+            color: white; /* Texto en blanco para mejor visibilidad */
+        }
+        #character {
+            width: 30px;
+            height: 30px;
+            background-color: #FF5733; /* Color representando Papelwoi34 */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: left 1.5s; /* Movimiento más lento */
+        }
+        .line {
+            position: absolute;
+            bottom: 0; /* Línea en la parte inferior */
+            right: 0; /* A la derecha */
+            height: 5px;
+            width: 100%; /* Ancho completo */
+            background-color: black;
+        }
+        #restartButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white; /* Texto en blanco para mejor visibilidad */
+            background-color: transparent; /* Fondo transparente */
+            border: 1px solid white; /* Borde blanco */
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <button id="restartButton">Reiniciar</button>
+        <div id="light"></div>
+        <div id="character"></div>
+        <div class="line"></div>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        let isGreen = false;
+        let gameOver = false;
+        let position = 0;
+        let redLightStartTime = 0;
+
+        function toggleLight() {
+            isGreen = !isGreen;
+            document.getElementById('light').style.backgroundColor = isGreen ? 'rgba(0, 255, 0, 0.2)' : 'rgba(255, 0, 0, 0.2)'; // Luz verde o roja con 20% de transparencia
+            redLightStartTime = Date.now(); // Captura el tiempo cuando la luz es roja
+            const duration = Math.floor(Math.random() * 2000) + 3000; // Tiempo aleatorio entre 3 y 5 segundos
+            setTimeout(toggleLight, duration);
+        }
+
+        function move() {
+            if (gameOver) return;
+
+            if (!isGreen) {
+                const elapsedTime = (Date.now() - redLightStartTime) / 1000; // Tiempo transcurrido en segundos
+                if (elapsedTime <= 1.5) { // Verifica si el tiempo es menor o igual a 1.5 segundos
+                    document.getElementById('status').innerText = '¡Perdiste! Te moviste en luz roja.';
+                    gameOver = true;
+                    return;
+                }
+            }
+
+            position += 15; // Mueve el personaje más lentamente
+            if (position >= window.innerWidth - 30) { // Verifica si cruzó la línea
+                document.getElementById('status').innerText = '¡Ganaste! Cruzaste la línea.';
+                gameOver = true;
+            } else if (position <= 0) { // Verifica si llegó a la esquina izquierda
+                document.getElementById('status').innerText = '¡Épico! Has llegado a la esquina izquierda.';
+                gameOver = true;
+            } else {
+                document.getElementById('character').style.left = position + 'px';
+                document.getElementById('status').innerText = 'Te moviste con éxito.';
+            }
+        }
+
+        function restartGame() {
+            isGreen = false;
+            gameOver = false;
+            position = 0;
+            document.getElementById('character').style.left = position + 'px';
+            document.getElementById('status').innerText = '';
+            document.getElementById('light').style.backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Reiniciar a luz roja
+            toggleLight(); // Reiniciar el ciclo de luces
+        }
+
+        document.getElementById('restartButton').addEventListener('click', restartGame);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                move();
+            }
+        });
+
+        toggleLight(); // Iniciar el ciclo de luces
+    </script>
+</body>
+</html>
