@@ -1,3 +1,11 @@
+*{
+  font-family: 'Luckiest Guy', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
+
 body{
     cursor: url(Cursor.png), auto;
 }
@@ -33,31 +41,6 @@ button {
 button:hover, button:focus, button:active {
   box-shadow: 0 0 20px rgb(192, 24, 207);
 }
-
-button {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: border-radius;
-  transition-property: border-radius;
-}
-button:hover, button:focus, button:active {
-  border-radius: 1.5em;
-}
-img {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: border-radius;
-  transition-property: border-radius;
-}
-img:hover, img:focus, img:active {
-  border-radius: 1.5em;
-}
-
-
 
 
 h6{
@@ -161,65 +144,56 @@ nav span i{
     cursor: pointer;
   
 }
+aside{
+    background-color: var(--items-color);
+    width: 260px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    overflow-y: hidden;
+    margin-top: 59px;
+    transition: 0.5s;
+    background-color:  #7a1c99 ;
+}
+aside:hover{
+    overflow-y: auto;
+    background-color:  #7a1c99;
+}
+.desplegar{
+    transform: translateX(-100%);
+}
+aside::-webkit-scrollbar{
+    width: 8px;
+}
+aside::-webkit-scrollbar-thumb{
+    background-color: #0bfe13;
+    border-radius: 4px;
+    border-width: 1px;
+    border-right: 1px;
+    border-color: black;
+}
+.container-svg{
+    border-bottom: 1px;
+    padding: 10px 1px;
+    color: var(--text-color);
+}
+.container-svg div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: url(Click.png), auto;
 
-    aside {
-      background-color: var(--items-color);
-      width: 260px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      overflow-y: hidden;
-      margin-top: 59px;
-      transition: 0.5s;
-      background-color: #7a1c99;
-    }
-
-    aside:hover {
-      overflow-y: auto;
-      background-color: #7a1c99;
-    }
-
-    .desplegar {
-      transform: translateX(-100%);
-    }
-
-    aside::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    aside::-webkit-scrollbar-thumb {
-      background-color: #0bfe13;
-      border-radius: 4px;
-      border-width: 1px;
-      border-right: 1px;
-      border-color: black;
-    }
-
-    .container-svg {
-      border-bottom: 1px;
-      padding: 10px 1px;
-      color: var(--text-color);
-    }
-
-    .container-svg div {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding: 10px 20px;
-      cursor: url(Click.png), auto;
-    }
-
-    .container-svg div:hover {
-      background-color: #671a81;
-    }
-
-    .container-svg div span {
-      margin-left: 15px;
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
-  
+}
+.container-svg div:hover{
+    background-color:  #671a81;
+}
+.container-svg div span{
+    margin-left: 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
 h2{
     padding: 10px 20px;
     color: #aaaaaa;
@@ -359,8 +333,5 @@ select {
   color: white;
 }
 .centro{
-  text-align: center;
-}
-.c{
   text-align: center;
 }

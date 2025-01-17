@@ -34,7 +34,7 @@ function actualizarDiccionario(nuevoDiccionario) {
 
 // Actualiza el diccionario con una nueva versión
 const nuevoDiccionario = {
-    "version": "Version 1.0",
+    "version": "Version 1.1",
 };
 actualizarDiccionario(nuevoDiccionario);
 
